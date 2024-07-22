@@ -1,4 +1,10 @@
-Day1: https://chatgpt.com/share/4126641d-6fd3-4c60-9f29-2db90f96a196
+Day1: https://chatgpt.com/share/00cfdb88-e37f-473b-98c7-d85f1156aa93
+
+
+
+
+
+
 
 # OpenAI 快速入门
 
