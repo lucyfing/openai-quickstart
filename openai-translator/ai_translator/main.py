@@ -7,6 +7,10 @@ from utils import ArgumentParser, ConfigLoader, LOG
 from model import GLMModel, OpenAIModel
 from translator import PDFTranslator
 
+import os
+os.environ['OPENAI_API_KEY'] = 'XXX'
+os.environ['OPENAI_BASE_URL'] = 'XXX'
+
 if __name__ == "__main__":
     argument_parser = ArgumentParser()
     args = argument_parser.parse_arguments()
@@ -21,7 +25,9 @@ if __name__ == "__main__":
 
     pdf_file_path = args.book if args.book else config['common']['book']
     file_format = args.file_format if args.file_format else config['common']['file_format']
+    pdf_target_language = args.target_language if args.target_language else 'Chinese'
+    pdf_pages = args.pages if args.pages else 8
 
     # 实例化 PDFTranslator 类，并调用 translate_pdf() 方法
     translator = PDFTranslator(model)
-    translator.translate_pdf(pdf_file_path, file_format)
+    translator.translate_pdf(pdf_file_path, file_format, pdf_target_language, None, pdf_pages)
